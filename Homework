@@ -1,0 +1,34 @@
+Week1 Homework related SQL
+
+question3:
+select 
+count(*)
+from green_taxi_data 
+where cast(lpep_pickup_datetime AS DATE)='2019-09-18'
+and cast(lpep_dropoff_datetime AS DATE)='2019-09-18';
+
+question4:
+select *
+from green_taxi_data
+order by trip_distance desc
+limit 1;
+
+question5
+select "Borough",sum(total_amount)
+from green_taxi_data 
+left join zones
+on green_taxi_data."PULocationID"=zones."LocationID"
+where cast(lpep_pickup_datetime as date)='2019-09-18'
+group by "Borough"
+order by 2 desc;
+
+question6
+select "Zone" 
+from zones
+where "LocationID" in (
+select "d1"."DOLocationID"
+from green_taxi_data d1
+left join zones z1
+on "d1"."PULocationID"="z1"."LocationID"
+where extract('month' from lpep_pickup_datetime)=9 and "z1"."Zone"='Astoria'
+order by tip_amount desc limit 1);
