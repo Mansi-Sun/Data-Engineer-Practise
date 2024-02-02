@@ -67,6 +67,7 @@ This repository should have the following structure:
 
 ###
 After completed the homework,below files added to specific folders.
+```
 ├── mage_data
 │   └── magic-zoomcamp
 |      |___data_exporters
@@ -77,3 +78,4 @@ After completed the homework,below files added to specific folders.
 |          |___postgres_post_check.sql
 |      |___transformers
 |          |___transform.py
+```
