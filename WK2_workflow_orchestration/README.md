@@ -1,5 +1,5 @@
 ## Data Engineering Zoomcamp - Week 2
-Note:
+###Note:
 
 1.Run below commands to setup Mage & Postgres docker image
 
@@ -65,8 +65,7 @@ This repository should have the following structure:
 └── requirements.txt
 ```
 
-###
-After completed the homework,below files added to specific folders.
+###After completed the homework,below files added to specific folders.
 ```
 ├── mage_data
 │   └── magic-zoomcamp
