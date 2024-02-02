@@ -171,4 +171,7 @@ scratch*
 *secrets*.json
 magic-zoomcamp
 *.json
-
+/WK2_workflow_orchestration/Dockerfile
+/WK2_workflow_orchestration/dev.env
+/WK2_workflow_orchestration/docker-compose.yml
+/WK2_workflow_orchestration/requirements.txt
