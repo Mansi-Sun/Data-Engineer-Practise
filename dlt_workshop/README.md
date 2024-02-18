@@ -35,6 +35,7 @@ generator=square_root_generator(limit)
 
 thirteenth_result=next(islice(generator,12,13))
 print(thirteenth_result)
+```
 - **Qeustion3**
 Below you have 2 generators. You will be tasked to load them to duckdb and answer some questions from the data
 1.Load the first generator and calculate the sum of ages of all people. Make sure to only load it once.
