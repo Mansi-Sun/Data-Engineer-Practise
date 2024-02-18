@@ -35,6 +35,44 @@ generator=square_root_generator(limit)
 
 thirteenth_result=next(islice(generator,12,13))
 print(thirteenth_result)
-    
+- **Qeustion3**
+Below you have 2 generators. You will be tasked to load them to duckdb and answer some questions from the data
+1.Load the first generator and calculate the sum of ages of all people. Make sure to only load it once.
+2.Append the second generator to the same table as the first.
+3.After correctly appending the data, calculate the sum of all ages of people.
+**Load the data** 
 ```
+import dlt
 
+def people_1():
+    for i in range(1, 6):
+        yield {"ID": i, "Name": f"Person_{i}", "Age": 25 + i, "City": "City_A"}
+
+def people_2():
+    for i in range(3, 9):
+        yield {"ID": i, "Name": f"Person_{i}", "Age": 30 + i, "City": "City_B", "Occupation": f"Job_{i}"}
+
+generators_pipeline=dlt.pipeline(destination='duckdb',dataset_name='generators')
+info=generators_pipeline.run(people_1(),
+							 table_name='personcount2',
+							 write_disposition='replace')
+
+info=generators_pipeline.run(people_2(),
+							 table_name='personcount2',
+							 write_disposition='append')
+print(info)
+```
+**Check the data**
+```
+import duckdb
+
+conn=duckdb.connect(database='dlt_exercise.duckdb')
+conn.sql("SET search_path = 'generators'")
+print(conn.sql("show tables"))
+
+print("\n\n\n personcount2 table below:")
+print(conn.sql("select * from personcount2"))
+print("\n\n\n sum of age is:")
+sumage=conn.sql("select sum(age) from personcount2")
+print(sumage)
+```
