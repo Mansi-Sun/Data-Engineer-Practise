@@ -42,7 +42,7 @@ Below you have 2 generators. You will be tasked to load them to duckdb and answe
 2.Append the second generator to the same table as the first.
 3.After correctly appending the data, calculate the sum of all ages of people.
 
-**Load the data** 
+****Load the data
 ```
 import dlt
 
@@ -64,7 +64,7 @@ info=generators_pipeline.run(people_2(),
 							 write_disposition='append')
 print(info)
 ```
-**Check the data**
+****Check the data
 ```
 import duckdb
 
@@ -87,7 +87,7 @@ Re-use the generators from Exercise 2.
 A table's primary key needs to be created from the start, so load your data to a new table with primary key ID.
 
 Load your first generator first, and then load the second one with merge. Since they have overlapping IDs, some of the records from the first load should be replaced by the ones from the second load.
-**Load part1 data**
+****Load part1 data
 ```
 import dlt
 def people_1():
@@ -101,7 +101,7 @@ info=pipeline.run(
 )
 print(info)    
 ```
-**Merge part2 with primary key**
+****Merge part2 with primary key
 ```
 import dlt
 def people_2():
@@ -116,7 +116,7 @@ info=pipeline.run(
 )
 print(info)
 ```
-**Check data**
+****Check data
 ```
 import duckdb
 conn=duckdb.connect(database='dlt_q4step1.duckdb')
