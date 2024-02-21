@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: golden-sandbox-411418
+    schema: ny_taxi
+    tables:
+      - name: green_tripdata_external
+      - name: yellow_tripdata_external
+      - name: fhv_2019
