@@ -42,4 +42,9 @@ union all
 fhv.service_type,
 fhv.pickup_time,
 fhv.dropoff_time
-from fhv)
+from fhv
+inner join dim_zones as pickup_zone
+on fhv.pulocationid = pickup_zone.locationid
+inner join dim_zones as dropoff_zone
+on fhv.dolocationid = dropoff_zone.locationid
+)

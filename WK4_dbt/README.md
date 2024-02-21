@@ -126,8 +126,28 @@ We could also add variables to define values that should be use across the proje
 limit 100
 {% endif %}
 ```
+![vars is test](img/vars_is_test.png)
 But if we run below command, the model will not contain "limit 100"
 ```
-dbt run --select stage_green_tripdata --vars 'is_test_run: false
+dbt run --select stage_green_tripdata --vars '{"is_test_run": false}'
 ```
-![vars is test](img/vars_is_test.png) ![vars not test](img/vars_not_test.png)
+![vars not test](img/vars_not_test.png)
+
+###Homework
+![dataflow](img/outcome.png)
+As for the homework. Firstly, we need load the data from GCS to BigQuery
+
+**Remember to use the csv the bootcamp provided, or we will waste time dealing with inconsistency data type with the parquet files**
+```
+create or replace external table ny_taxi.fhv_2019 
+options( 
+format = 'CSV', 
+uris = ['gs://mage-demo-mansisun007654321/fhv/*.csv'] );
+```
+
+Secondly, we could create the fact_fhv_trips model, which inner joined with table dim_zones to filter out unknown borough
+
+Thirdly, we could union yellow&green trip data with fhv data to get ready for the data visualization
+
+In the end, we got our data visualized in google looker studio
+![outcome](img/outcome.png) 
