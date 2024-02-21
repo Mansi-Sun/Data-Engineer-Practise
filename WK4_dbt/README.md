@@ -147,7 +147,11 @@ uris = ['gs://mage-demo-mansisun007654321/fhv/*.csv'] );
 
 Secondly, we could create the fact_fhv_trips model, which inner joined with table dim_zones to filter out unknown borough
 
+**Check file models/core/fact_fhv_trips.sql**
+
 Thirdly, we could union yellow&green trip data with fhv data to get ready for the data visualization
+
+**Check file models/core/fact_monthly_data.sql**
 
 In the end, we got our data visualized in google looker studio
 ![outcome](img/outcome.png) 
