@@ -134,7 +134,7 @@ dbt run --select stage_green_tripdata --vars '{"is_test_run": false}'
 ![vars not test](img/vars_not_test.png)
 
 ###Homework
-![dataflow](img/outcome.png)
+![dataflow](img/dataflow.png)
 As for the homework. Firstly, we need load the data from GCS to BigQuery
 
 **Remember to use the csv the bootcamp provided, or we will waste time dealing with inconsistency data type with the parquet files**
