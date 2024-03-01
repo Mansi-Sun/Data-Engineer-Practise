@@ -175,3 +175,8 @@ WK2_workflow_orchestration/Dockerfile
 WK2_workflow_orchestration/dev.env
 WK2_workflow_orchestration/docker-compose.yml
 WK2_workflow_orchestration/requirements.txt
+WK4_dbt/fhv*.parquet
+WK4_dbt/new_fhv*.parquet
+WK4_dbt/fhv_tripdata_2019-04.csv
+WK5_batch/code/data/
+WK5_batch/code/fhvhv/
