@@ -1,8 +1,8 @@
-##Pyspark learning notes
+## Pyspark learning notes
 
-###Pyspark installation in GCP VM
+### Pyspark installation in GCP VM
 
-####Install Spark on macos
+#### Install Spark on macos
 
 1. Install scala
 brew install scala@2.13
