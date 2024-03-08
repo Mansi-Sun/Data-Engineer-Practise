@@ -1,6 +1,6 @@
-![Dashboard](./img/dashboard.gif)
-
 ## Risingwave workshop learning notes
+
+![Dashboard](./img/dashboard.gif)
 
 Check out this well prepared workshop resouce from:
 
