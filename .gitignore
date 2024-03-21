@@ -180,3 +180,4 @@ WK4_dbt/new_fhv*.parquet
 WK4_dbt/fhv_tripdata_2019-04.csv
 WK5_batch/code/data/
 WK5_batch/code/fhvhv/
+Project/Data/business_names_202403.csv
